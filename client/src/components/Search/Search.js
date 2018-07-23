@@ -22,7 +22,7 @@ const Search = () => (
                         <label for="end">End Year</label>
                         <input className="form-control" type="text" id="end" />
                     </div>
-
+                    <button className="btn btn-primary" type="submit">Search</button>
                 </form>
             </div>
         </div>
