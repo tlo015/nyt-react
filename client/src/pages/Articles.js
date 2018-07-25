@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import Search from "./components/Search";
+import Result from "./components/Result";
+import Saved from "./components/Saved";
 import API from "../utils/API";
 
 class Articles extends Components {
@@ -24,6 +26,11 @@ class Articles extends Components {
         ).catch(err => console.log(err));
     };
 
+    //save article to db
+    saveArticle = id => {
+        API.saveArticle({})
+    };  
+
     //delete single saved article by id
     deleteArticle = id => {
         API.deleteArticle(id).then(res => this.loadArticles()
@@ -38,9 +45,12 @@ class Articles extends Components {
         });
     };
 
-    //submit 
+    //when search form is submitted 
     handleFromSubmit = event => {
-        event.preventDefault 
+        event.preventDefault();
+        API.search({ this.state.title }).then(res => 
+        this.setState({
+        ).catch(err => console.log(err));
     }
 
 }
